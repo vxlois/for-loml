@@ -1,5 +1,5 @@
 {
-  "name": "for-loml",
+  "name": "for-yeli",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -11,7 +11,7 @@
   "dependencies": {
     "react": "^19.2.3",
     "react-dom": "^19.2.3",
-    "framer-motion": "^12.23.26"
+    "framer-motion": "11.18.2"
   },
   "devDependencies": {
     "@types/node": "^22.14.0",

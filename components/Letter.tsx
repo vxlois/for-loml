@@ -30,7 +30,7 @@ const Letter: React.FC<LetterProps> = ({ phase, onExpand, onNext, onReset, conte
       opacity: 1,
       transition: {
         delayChildren: 0.3,
-        staggerChildren: 0.06
+        staggerChildren: 0.05
       }
     }
   };
@@ -40,7 +40,7 @@ const Letter: React.FC<LetterProps> = ({ phase, onExpand, onNext, onReset, conte
     visible: { 
       opacity: 1, 
       y: 0, 
-      transition: { duration: 0.5, ease: "easeOut" } 
+      transition: { duration: 0.4, ease: "easeOut" } 
     }
   };
 
@@ -82,7 +82,7 @@ const Letter: React.FC<LetterProps> = ({ phase, onExpand, onNext, onReset, conte
       className={`relative bg-[#fcfcf9] rounded-sm flex flex-col items-center justify-center pointer-events-auto transition-all overflow-hidden border-[1px] border-black/10
         ${isExpanded 
           ? 'w-[85vw] max-w-[340px] px-6 py-6 items-start cursor-pointer' 
-          : 'w-[280px] h-[160px] px-4 cursor-pointer'
+          : 'w-[280px] h-[160px] px-4 cursor-pointer hover:shadow-lg'
         }`}
       style={{ 
         zIndex: isExpanded ? 100 : 60,
@@ -100,7 +100,7 @@ const Letter: React.FC<LetterProps> = ({ phase, onExpand, onNext, onReset, conte
             exit={{ opacity: 0 }}
             className="flex flex-col items-center justify-center text-center w-full z-10 h-full"
           >
-            <div className="font-handwritten text-[20px] text-[#444] font-medium tracking-wide italic">{content.intro}</div>
+            <div className="font-handwritten text-[22px] text-[#444] font-medium tracking-wide italic">{content.intro}</div>
           </motion.div>
         ) : (
           <motion.div 
@@ -112,12 +112,12 @@ const Letter: React.FC<LetterProps> = ({ phase, onExpand, onNext, onReset, conte
           >
             <motion.div 
               variants={itemVariants} 
-              className="font-handwritten text-[12px] text-[#1a1a1a] mb-1.5 font-bold"
+              className="font-handwritten text-[13px] text-[#1a1a1a] mb-2 font-bold"
             >
               Dear {content.to},
             </motion.div>
             
-            <div className="font-handwritten text-[10px] text-[#2c2c2c] leading-[1.35] space-y-2">
+            <div className="font-handwritten text-[10.5px] text-[#2c2c2c] leading-[1.4] space-y-2.5">
               {paragraphs.map((paragraph, idx) => (
                 <motion.p key={idx} variants={itemVariants}>
                   {paragraph}
@@ -125,12 +125,12 @@ const Letter: React.FC<LetterProps> = ({ phase, onExpand, onNext, onReset, conte
               ))}
             </div>
             
-            <motion.div variants={itemVariants} className="mt-4 w-full flex justify-end">
+            <motion.div variants={itemVariants} className="mt-5 w-full flex justify-end">
               <div className="text-right">
-                <p className="font-handwritten text-[10px] text-[#444] opacity-70 italic leading-none">
+                <p className="font-handwritten text-[11px] text-[#555] opacity-80 italic leading-none">
                   {content.signOff}
                 </p>
-                <p className="font-handwritten text-[12px] text-[#1a1a1a] font-bold mt-1">{content.from}</p>
+                <p className="font-handwritten text-[13px] text-[#1a1a1a] font-bold mt-1.5">{content.from}</p>
               </div>
             </motion.div>
           </motion.div>

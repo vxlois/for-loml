@@ -7,7 +7,7 @@ import Envelope from './components/Envelope';
 export type AnimationPhase = 'closed' | 'peek' | 'outside' | 'expanded' | 'flowers';
 
 const LETTER_CONTENT = {
-  intro: "Open Me",
+  intro: "for my everything :P",
   to: "Yeli",
   body: `Happy 1st monthsary to us, baby! I know you’ve been going through a lot lately, and I just want you to know that I’m always here to listen and support you. Whatever other people say, I’ll always know the real you—the kind, amazing, and strong person I fell in love with. Even on your rough days, I hope you feel how much I care and how much you mean to me.
 
@@ -15,7 +15,7 @@ Being with you has helped me grow in ways I never imagined. Seeing your patience
 
 I assure you that I’ll always be here for you, especially on the days you feel empty or tired. I hope we can keep growing together, learning from each other, and supporting each other no matter what. So, happy monthsary again, baby! I love you so much, and I’ll never get tired of telling you just how much I love you.`,
   signOff: "With all my heart,",
-  from: "Lois"
+  from: "Lois :)"
 };
 
 const App: React.FC = () => {

@@ -6,8 +6,8 @@
     "build": "echo 'Static deployment: No build step needed' && exit 0"
   },
   "dependencies": {
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
+    "react": "19.0.0",
+    "react-dom": "19.0.0",
     "framer-motion": "^11.11.17"
   }
 }

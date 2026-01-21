@@ -1,7 +1,6 @@
-
 import React from 'react';
 import { motion, Variants, AnimatePresence } from 'framer-motion';
-import { AnimationPhase } from '../App';
+import { AnimationPhase } from '../App.tsx';
 
 interface LetterProps {
   phase: AnimationPhase;

@@ -1,8 +1,8 @@
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import Letter from './Letter';
-import FlowerScene from './FlowerScene';
-import { AnimationPhase } from '../App';
+import Letter from './Letter.tsx';
+import FlowerScene from './FlowerScene.tsx';
+import { AnimationPhase } from '../App.tsx';
 
 interface EnvelopeProps {
   phase: AnimationPhase;
@@ -47,7 +47,6 @@ const Envelope: React.FC<EnvelopeProps> = ({ phase, onClick, onExpand, onNext, o
       >
         <div className={`absolute inset-0 bg-black/20 blur-xl rounded-xl transition-opacity duration-700 translate-x-4 translate-y-6 ${isOpen ? 'opacity-20' : 'opacity-60'}`} />
 
-        {/* Flap inside (open state) */}
         <motion.div 
           initial={{ opacity: 0 }}
           animate={{ opacity: isOpen ? 1 : 0 }}
@@ -73,7 +72,6 @@ const Envelope: React.FC<EnvelopeProps> = ({ phase, onClick, onExpand, onNext, o
           </svg>
         </motion.div>
 
-        {/* Interior */}
         <div 
           className="absolute inset-0 rounded-sm overflow-hidden z-10 border-[2px]"
           style={{ 
@@ -86,7 +84,6 @@ const Envelope: React.FC<EnvelopeProps> = ({ phase, onClick, onExpand, onNext, o
           </svg>
         </div>
 
-        {/* Dynamic Content (Letter or Flowers) */}
         <motion.div 
           className="absolute inset-0 flex items-center justify-center pointer-events-none"
           animate={{ zIndex: (phase === 'peek' || phase === 'closed') ? 15 : 60 }}
@@ -108,7 +105,6 @@ const Envelope: React.FC<EnvelopeProps> = ({ phase, onClick, onExpand, onNext, o
           </AnimatePresence>
         </motion.div>
 
-        {/* Flap (closed state) */}
         <motion.div
           initial={false}
           animate={{ 
@@ -144,7 +140,6 @@ const Envelope: React.FC<EnvelopeProps> = ({ phase, onClick, onExpand, onNext, o
           </svg>
         </motion.div>
 
-        {/* Envelope Body Overlay */}
         <div className="absolute inset-0 z-30 pointer-events-none">
           <svg className="w-full h-full overflow-visible" viewBox="0 0 100 66" preserveAspectRatio="none">
             <path d="M 0 0 L 50 33 L 0 66 Z" fill={envelopeColor} stroke={outlineColor} strokeWidth="1.5" strokeLinejoin="round" />

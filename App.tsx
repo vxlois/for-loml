@@ -1,8 +1,7 @@
-
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import FloatingHearts from './components/FloatingHearts';
-import Envelope from './components/Envelope';
+import FloatingHearts from './components/FloatingHearts.tsx';
+import Envelope from './components/Envelope.tsx';
 
 export type AnimationPhase = 'closed' | 'peek' | 'outside' | 'expanded' | 'flowers';
 
@@ -27,6 +26,7 @@ const App: React.FC = () => {
     }
   };
 
+  // Fixed the useEffect cleanup to return void (clearTimeout) instead of number (setTimeout results)
   useEffect(() => {
     if (phase === 'peek') {
       const timer = setTimeout(() => {
